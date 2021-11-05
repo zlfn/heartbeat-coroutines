@@ -189,25 +189,29 @@ HeartbeatScope().launch {
 ```
 
 ---
-> #### Dispatchers.Heartbeat
-> `JavaPlugin` 과 같은 생명주기를 가진 `CoroutineDispatcher` 입니다.
->
-> Coroutine을 Bukkit의 PrimaryThread에서만 실행합니다.
 
-> #### HeartbeatScope()
-> `JavaPlugin` 과 같은 생명주기를 가진 `CoroutineScope` 입니다.
->
-> `Dispatchers.Heartbeat`를 `CoroutineDispatcher`로 가지며 `JavaPlugin` 생명주기를 따라가는 `SupervisorJob`을 부모로 가집니다.
+#### Dispatchers.Heartbeat
 
-> #### Suspension
-> 누적 지연 기능을 가진 클래스입니다.
->
-> `Dispatchers.Hearbeat`는 Coroutine을 Bukkit의 PrimaryThread에서 실행하기 위해서 `BukkitScheduler#runTask`를 사용합니다.
->
-> `BukkitScheduler`는 1tick(50ms)마다 등록된 태스크들을 실행하며 서버 상태에 따라 지연될 수 있습니다.
->
-> Coroutine은 지연을 millisecond 단위로 제어 할 수 있으며 이는 `Dispatchers.Heartbeat`에서 실행될 때 결과가 기대와 다를 수 있습니다.
->
-> `delay(1)` 함수가 호출 될 때 `Dispatchers.Heatbeat`에서는 50ms 이상 늘어날 수 있습니다.
->
-> `Suspension`은 내부적으로 누적되는 지연 시간을 가지며 누적된 시간이 과거일 경우 yield()를 호출하고 미래일 경우 남은 시간만큼 `delay`를 호출합니다. 
+`JavaPlugin` 과 같은 생명주기를 가진 `CoroutineDispatcher` 입니다.
+
+Coroutine을 Bukkit의 PrimaryThread에서만 실행합니다.
+
+#### HeartbeatScope()
+
+`JavaPlugin` 과 같은 생명주기를 가진 `CoroutineScope` 입니다.
+
+`Dispatchers.Heartbeat`를 `CoroutineDispatcher`로 가지며 `JavaPlugin` 생명주기를 따라가는 `SupervisorJob`을 부모로 가집니다.
+
+#### Suspension
+
+누적 지연 기능을 가진 클래스입니다.
+
+`Dispatchers.Hearbeat`는 Coroutine을 Bukkit의 PrimaryThread에서 실행하기 위해서 `BukkitScheduler#runTask`를 사용합니다.
+
+`BukkitScheduler`는 1tick(50ms)마다 등록된 태스크들을 실행하며 서버 상태에 따라 지연될 수 있습니다.
+
+Coroutine은 지연을 millisecond 단위로 제어 할 수 있으며 이는 `Dispatchers.Heartbeat`에서 실행될 때 결과가 기대와 다를 수 있습니다.
+
+`delay(1)` 함수가 호출 될 때 `Dispatchers.Heatbeat`에서는 50ms 이상 늘어날 수 있습니다.
+
+`Suspension`은 내부적으로 누적되는 지연 시간을 가지며 누적된 시간이 과거일 경우 yield()를 호출하고 미래일 경우 남은 시간만큼 `delay`를 호출합니다. 
