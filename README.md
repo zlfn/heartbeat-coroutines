@@ -154,7 +154,7 @@ CoroutineScope(GameLoopDispatcher).launch {
 
 Thread의 코드와 비슷하지만 GameLoop 내에서 동기적으로 실행 가능한 코드입니다!
 
-Coroutine의 동작원리는 아래 이 [문서](https://kotlinlang.org/docs/coroutines-overview.html) 를 참고하세요
+Coroutine의 동작원리는 이 [문서](https://kotlinlang.org/docs/coroutines-overview.html) 를 참고하세요
 
 ---
 
