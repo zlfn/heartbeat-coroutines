@@ -190,19 +190,23 @@ HeartbeatScope().launch {
 
 ---
 
-#### Dispatchers.Heartbeat
+### Dispatchers.Heartbeat
 
 `JavaPlugin` 과 같은 생명주기를 가진 `CoroutineDispatcher` 입니다.
 
 Coroutine을 Bukkit의 PrimaryThread에서만 실행합니다.
 
-#### HeartbeatScope()
+---
+
+### HeartbeatScope()
 
 `JavaPlugin` 과 같은 생명주기를 가진 `CoroutineScope` 입니다.
 
 `Dispatchers.Heartbeat`를 `CoroutineDispatcher`로 가지며 `JavaPlugin` 생명주기를 따라가는 `SupervisorJob`을 부모로 가집니다.
 
-#### Suspension
+---
+
+### Suspension
 
 누적 지연 기능을 가진 클래스입니다.
 
