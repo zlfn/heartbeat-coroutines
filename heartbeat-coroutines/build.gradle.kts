@@ -26,7 +26,7 @@ publishing {
 
         maven {
             name = "debug"
-            url = rootProject.uri(".debug-paper/libraries")
+            url = rootProject.uri(".debug/libraries")
         }
 
         maven {
@@ -52,7 +52,7 @@ publishing {
     }
 
     publications {
-        create<MavenPublication>("api") {
+        create<MavenPublication>("core") {
             artifactId = project.name
             from(components["java"])
             artifact(tasks["sourcesJar"])
@@ -94,5 +94,5 @@ publishing {
 signing {
     isRequired = true
     sign(tasks.jar.get(), tasks["sourcesJar"], tasks["dokkaJar"])
-    sign(publishing.publications["api"])
+    sign(publishing.publications["core"])
 }
