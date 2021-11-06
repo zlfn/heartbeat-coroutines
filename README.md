@@ -99,7 +99,7 @@ class Surprise : GameLoopTask() {
 
     // 1초마다 GameLoop 에서 호출
     override fun run() {
-        when (state == 0) {
+        when (state) {
             0 -> {
                 val message = 3 - countdownTicks++
                 broadcast(message)
