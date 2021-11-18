@@ -17,7 +17,7 @@ internal object Downstream {
         }
 
     private val PluginClassLoader.internalLoaders: List<ClassLoader>
-        get() = classLoaderFields.map { it.get(this) as ClassLoader }
+        get() = classLoaderFields.map { it.get(this) }.filterIsInstance<ClassLoader>()
 
     fun pullPlugin(): Plugin {
         val classLoader = Downstream::class.java.classLoader
