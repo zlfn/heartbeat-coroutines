@@ -148,7 +148,7 @@ CoroutineScope(GameLoopDispatcher).launch {
         damageAll()
         delay(1000L)
     }
-    brocast("surprise~")
+    broadcast("surprise~")
 }
 ```
 
