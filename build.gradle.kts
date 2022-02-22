@@ -34,7 +34,7 @@ subprojects {
     dependencies {
         compileOnly("io.papermc.paper:paper-api:1.18-R0.1-SNAPSHOT")
 
-        implementation(kotlin("stdlib"))
-        implementation("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2")
+        api(kotlin("stdlib"))
+        api("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2")
     }
 }
