@@ -1,9 +1,9 @@
 name: ${pluginName}
 version: ${version}
-main: ${group}.${packageName}.plugin.${pluginName}Plugin
-api-version: 1.17
+main: ${group}.heartbeat.coroutines.plugin.${pluginName}Plugin
+api-version: 1.19
 libraries:
-  - org.jetbrains.kotlin:kotlin-stdlib:1.5.21
-  - org.jetbrains.kotlin:kotlin-reflect:1.5.21
-  - org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.0
+  - org.jetbrains.kotlin:kotlin-stdlib:${kotlinVersion}
+  - org.jetbrains.kotlin:kotlin-reflect:${kotlinVersion}
+  - org.jetbrains.kotlinx:kotlinx-coroutines-core:${coroutinesVersion}
   - io.github.monun:heartbeat-coroutines:${version}

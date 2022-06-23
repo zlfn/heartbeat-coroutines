@@ -1,20 +1,10 @@
 plugins {
-    kotlin("jvm") version "1.6.0"
+    kotlin("jvm") version Dependency.Kotlin.Version
 }
 
 java {
     toolchain {
         languageVersion.set(JavaLanguageVersion.of(17))
-    }
-}
-
-buildscript {
-    repositories {
-        mavenCentral()
-    }
-
-    dependencies {
-        classpath("net.md-5:SpecialSource:1.10.0")
     }
 }
 
@@ -32,9 +22,9 @@ subprojects {
     }
 
     dependencies {
-        compileOnly("io.papermc.paper:paper-api:1.18-R0.1-SNAPSHOT")
+        compileOnly("io.papermc.paper:paper-api:1.19-R0.1-SNAPSHOT")
 
         api(kotlin("stdlib"))
-        api("org.jetbrains.kotlinx:kotlinx-coroutines-core:1.5.2")
+        api("org.jetbrains.kotlinx:kotlinx-coroutines-core:${Dependency.Coroutines.Version}")
     }
 }

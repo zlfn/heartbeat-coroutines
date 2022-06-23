@@ -1,7 +1,3 @@
-repositories {
-    mavenLocal()
-}
-
 val projectCore = project(":${rootProject.name}")
 
 dependencies {
@@ -9,11 +5,16 @@ dependencies {
 }
 
 val pluginName = rootProject.name.split('-').joinToString("") { it.capitalize() }
-val packageName = rootProject.name.replace("-", ".")
-extra.set("pluginName", pluginName)
-extra.set("packageName", packageName)
+
+extra.apply {
+    set("pluginName", pluginName)
+
+    set("kotlinVersion", Dependency.Kotlin.Version)
+    set("coroutinesVersion", Dependency.Coroutines.Version)
+}
 
 tasks {
+    // generate plugin.yml
     processResources {
         filesMatching("*.yml") {
             expand(project.properties)
@@ -21,20 +22,16 @@ tasks {
         }
     }
 
-    create<Jar>("paperJar") {
+    register<Copy>("paperJar") {
         dependsOn(projectCore.tasks.named("publishAllPublicationsToDebugRepository"))
+        from(jar)
 
-        archiveBaseName.set(pluginName)
-        archiveVersion.set("")
+        val jarName = "$pluginName.jar"
+        rename { jarName }
+        val plugins = File("../.debug-server/plugins")
+        val plugin = File(plugins, "$pluginName.jar")
 
-        from(project.sourceSets["main"].output)
-
-        doLast {
-            copy {
-                from(archiveFile)
-                val plugins = File(rootDir, ".debug/plugins/")
-                into(if (File(plugins, archiveFileName.get()).exists()) File(plugins, "update") else plugins)
-            }
-        }
+        if (plugin.exists())    into(File(plugins, "update"))
+        else                    into(plugins)
     }
 }
