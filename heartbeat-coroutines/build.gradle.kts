@@ -25,8 +25,8 @@ publishing {
         mavenLocal()
 
         maven {
-            name = "debug"
-            url = rootProject.uri(".debug-server/libraries")
+            name = "server"
+            url = rootProject.uri(".server/libraries")
         }
 
         maven {
@@ -60,7 +60,7 @@ publishing {
 
             pom {
                 name.set(project.name)
-                description.set("Blah blah")
+                description.set("Kotlin Coroutines For PaperMC")
                 url.set("https://github.com/monun/${rootProject.name}")
 
                 licenses {

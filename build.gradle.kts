@@ -1,4 +1,5 @@
 plugins {
+    idea
     kotlin("jvm") version Dependency.Kotlin.Version
 }
 
@@ -22,9 +23,17 @@ subprojects {
     }
 
     dependencies {
-        compileOnly("io.papermc.paper:paper-api:1.19-R0.1-SNAPSHOT")
+        compileOnly("io.papermc.paper:paper-api:${Dependency.Paper.Version}-R0.1-SNAPSHOT")
 
         api(kotlin("stdlib"))
         api("org.jetbrains.kotlinx:kotlinx-coroutines-core:${Dependency.Coroutines.Version}")
+    }
+}
+
+idea {
+    module {
+        excludeDirs.add(file(".server"))
+        excludeDirs.addAll(allprojects.map { it.buildDir })
+        excludeDirs.addAll(allprojects.map { it.file(".gradle") })
     }
 }

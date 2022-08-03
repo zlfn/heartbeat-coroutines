@@ -5,4 +5,8 @@ object Dependency {
     object Coroutines {
         const val Version = "1.6.0"
     }
+
+    object Paper {
+        const val Version = "1.18"
+    }
 }
