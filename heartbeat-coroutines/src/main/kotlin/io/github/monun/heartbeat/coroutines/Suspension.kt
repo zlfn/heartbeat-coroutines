@@ -3,7 +3,7 @@ package io.github.monun.heartbeat.coroutines
 import kotlinx.coroutines.yield
 
 /**
- * Coroutine의 지연 작업을 흐른 시간에 따라 유연하게 처리합니다.
+ * Coroutine 의 지연 작업을 흐른 시간에 따라 유연하게 처리합니다.
  */
 class Suspension {
     private val currentMillis: Long
