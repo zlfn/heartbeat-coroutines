@@ -8,7 +8,7 @@
 [![GitHub](https://img.shields.io/github/license/monun/invfx)](https://www.gnu.org/licenses/gpl-3.0.html)
 [![Kotlin](https://img.shields.io/badge/youtube-각별-red.svg?logo=youtube)](https://www.youtube.com/channel/UCDrAR1OWC2MD4s0JLetN0MA)
 
-~~두근두근❤️코루틴~~
+<del><ruby>두근두근<rp>（</rp><rt>ドキドキ</rt><rp>）</rp></ruby>❤️<ruby>코루틴<rp>（</rp><rt>コルーチン</rt><rp>）</rp></ruby></del>
 
 ### Coroutine for Paper
 
