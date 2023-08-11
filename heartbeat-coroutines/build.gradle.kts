@@ -81,6 +81,15 @@ publishing {
                     }
                 }
 
+                contributors {
+                    contributor {
+                        name.set("zlfn")
+                        email.set("ung@zlfn.space")
+                        url.set("https://zlfn.space")
+                        timezone.set("Asia/Seoul")
+                    }
+                }
+
                 scm {
                     connection.set("scm:git:git://github.com/monun/${rootProject.name}.git")
                     developerConnection.set("scm:git:ssh://github.com:monun/${rootProject.name}.git")

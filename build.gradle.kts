@@ -9,7 +9,6 @@ java {
     }
 }
 
-
 allprojects {
     repositories {
         mavenCentral()
