@@ -52,7 +52,7 @@ private fun HeartbeatSession?.validate(): HeartbeatSession {
 }
 
 /**
- * Bukkit의 mainHeartBeat 에서 실행하는 [CoroutineDispatcher]를 가져옵니다
+ * Bukkit의 mainHeartBeat에서 실행하는 [CoroutineDispatcher]를 가져옵니다.
  *
  * 라이브러리를 로드한 [Plugin]의 생명주기를 따릅니다.
  */
@@ -60,7 +60,7 @@ val Dispatchers.Heartbeat: CoroutineDispatcher
     get() = HeartbeatCoroutine.session().dispatcher
 
 /**
- * [Dispatchers.Heartbeat] 를 기본 [CoroutineDispatcher]로 가진 [CoroutineScope]를 생성합니다.
+ * [Dispatchers.Heartbeat]를 기본 [CoroutineDispatcher]로 가진 [CoroutineScope]를 생성합니다.
  *
  * 라이브러리를 로드한 [Plugin]의 생명주기를 따릅니다.
  */

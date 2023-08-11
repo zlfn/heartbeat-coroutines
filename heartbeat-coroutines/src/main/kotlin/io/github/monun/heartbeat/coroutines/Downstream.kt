@@ -6,7 +6,7 @@ import org.bukkit.plugin.java.PluginClassLoader
 
 
 /**
- * Bukkit의 LibraryLoader로 로딩되었을때 ClassLoader의 플러그인을 불러옴
+ * Bukkit의 LibraryLoader로 로딩되었을 때 ClassLoader의 플러그인을 불러옵니다.
  */
 internal object Downstream {
     private val classLoaderFields
