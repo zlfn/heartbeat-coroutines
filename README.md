@@ -18,6 +18,9 @@
     * Bukkit의 mainHeartBeat(GameLoop)에서 dispatch되는 Coroutine
     * JavaPlugin 생명주기의 CoroutineScope
     * 유연한 지연작업
+* #### Supported minecraft versions
+  * 1.18 이상의 **Paper** 및 포크들
+  * Spigot, CraftBukkit은 현재 지원하지 않습니다.
 
 ---
 
@@ -162,13 +165,13 @@ Coroutine의 동작원리는 이 [문서](https://kotlinlang.org/docs/coroutines
 
 ### Gradle
 
-```kotlin
+```gradle
 repositories {
     mavenCentral()
 }
 ```
 
-```kotlin
+```gradle
 dependencies {
     implementation("io.github.monun:heartbeat-coroutines:<version>")
 }
@@ -177,6 +180,9 @@ dependencies {
 ### Example
 
 ```kotlin
+import io.github.monun.heartbeat.coroutines.HeartbeatScope
+import kotlinx.coroutines.launch
+
 // JavaPlugin#onEnable()
 HeartbeatScope().launch {
     val suspension = Suspension()
