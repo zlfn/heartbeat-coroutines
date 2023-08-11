@@ -20,7 +20,7 @@
     * 유연한 지연작업
 * #### Supported minecraft versions
   * 1.18 이상의 **Paper** 및 포크들
-  * Spigot, CraftBukkit은 현재 지원하지 않습니다.
+  * Spigot, CraftBukkit은 지원하지 않습니다.
 
 ---
 
@@ -100,7 +100,7 @@ class Surprise : GameLoopTask() {
     private var countdownTicks = 0
     private var damageTicks = 0
 
-    // 1초마다 GameLoop 에서 호출
+    // 1초마다 GameLoop에서 호출
     override fun run() {
         when (state) {
             0 -> {
@@ -128,13 +128,13 @@ class Surprise : GameLoopTask() {
 
 극단적인 예를 들었습니다만..
 
-실제로 GameLoop내에서 연쇄, 순차적인 루틴을 처리하기 위해선 대부분 위 예제들과 같은 구조의 코드를 작성하게됩니다.
+실제로 GameLoop 내에서 연쇄, 순차적인 루틴을 처리하기 위해선 대부분 위 예제들과 같은 구조의 코드를 작성하게 됩니다.
 
 루틴이 복잡해질수록 비동기 문제, 복잡성으로 인해 유연성은 떨어지고 유지보수 난이도는 기하급수로 상승합니다.
 
 Coroutine을 이용하면 GameLoop 내 연쇄 작업 코드의 복잡성을 획기적으로 줄일 수 있습니다.
 
-아래 예제는 GameLoop내에서 동기적으로 실행되는 Coroutine 코드입니다
+아래 예제는 GameLoop 내에서 동기적으로 실행되는 Coroutine 코드입니다.
 
 <br>
 
@@ -157,7 +157,7 @@ CoroutineScope(GameLoopDispatcher).launch {
 
 Thread의 코드와 비슷하지만 GameLoop 내에서 동기적으로 실행 가능한 코드입니다!
 
-Coroutine의 동작원리는 이 [문서](https://kotlinlang.org/docs/coroutines-overview.html) 를 참고하세요
+Coroutine의 동작원리는 이 [문서](https://kotlinlang.org/docs/coroutines-overview.html) 를 참고하세요.
 
 ---
 
@@ -198,7 +198,7 @@ HeartbeatScope().launch {
 
 ### Dispatchers.Heartbeat
 
-`JavaPlugin` 과 같은 생명주기를 가진 `CoroutineDispatcher` 입니다.
+`JavaPlugin`과 같은 생명주기를 가진 `CoroutineDispatcher`입니다.
 
 Coroutine을 Bukkit의 PrimaryThread에서만 실행합니다.
 
@@ -206,7 +206,7 @@ Coroutine을 Bukkit의 PrimaryThread에서만 실행합니다.
 
 ### HeartbeatScope()
 
-`JavaPlugin` 과 같은 생명주기를 가진 `CoroutineScope` 입니다.
+`JavaPlugin`과 같은 생명주기를 가진 `CoroutineScope`입니다.
 
 `Dispatchers.Heartbeat`를 `CoroutineDispatcher`로 가지며 `JavaPlugin` 생명주기를 따라가는 `SupervisorJob`을 부모로 가집니다.
 
