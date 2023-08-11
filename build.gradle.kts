@@ -1,6 +1,6 @@
 plugins {
     idea
-    kotlin("jvm") version Dependency.Kotlin.Version
+    kotlin("jvm") version libs.versions.kotlin
 }
 
 java {
@@ -9,24 +9,20 @@ java {
     }
 }
 
+
 allprojects {
     repositories {
         mavenCentral()
-    }
-}
-
-subprojects {
-    apply(plugin = "org.jetbrains.kotlin.jvm")
-
-    repositories {
         maven("https://papermc.io/repo/repository/maven-public/")
     }
 
+    apply(plugin = "org.jetbrains.kotlin.jvm")
+
     dependencies {
-        compileOnly("io.papermc.paper:paper-api:${Dependency.Paper.Version}-R0.1-SNAPSHOT")
+        compileOnly(rootProject.project.libs.paper)
 
         api(kotlin("stdlib"))
-        api("org.jetbrains.kotlinx:kotlinx-coroutines-core:${Dependency.Coroutines.Version}")
+        api(rootProject.project.libs.coroutines)
     }
 }
 

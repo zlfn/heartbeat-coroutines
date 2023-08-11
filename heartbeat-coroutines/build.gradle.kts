@@ -1,5 +1,5 @@
 plugins {
-    id("org.jetbrains.dokka") version Dependency.Dokka.Version
+    alias(libs.plugins.dokka)
     `maven-publish`
     signing
 }
