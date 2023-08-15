@@ -1,7 +1,7 @@
 # Heartbeat Coroutines
 
 [![Kotlin](https://img.shields.io/badge/java-17-ED8B00.svg?logo=java)](https://www.azul.com/)
-[![Kotlin](https://img.shields.io/badge/kotlin-1.9.0-585DEF.svg?logo=kotlin)](http://kotlinlang.org)
+[![Kotlin](https://img.shields.io/badge/kotlin-1.8.22-585DEF.svg?logo=kotlin)](http://kotlinlang.org)
 [![Gradle](https://img.shields.io/badge/kotlinx.coroutines-1.7.3-585DEF.svg)](https://github.com/Kotlin/kotlinx.coroutines)
 [![Gradle](https://img.shields.io/badge/gradle-8.2.1-02303A.svg?logo=gradle)](https://gradle.org)
 [![Maven Central](https://img.shields.io/maven-central/v/io.github.monun/heartbeat-coroutines)](https://search.maven.org/artifact/io.github.monun/heartbeat-coroutines)
