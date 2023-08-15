@@ -30,10 +30,10 @@ private object HeartbeatCoroutine {
                             @EventHandler(priority = EventPriority.LOWEST)
                             fun onPluginDisable(event: PluginDisableEvent) {
                                 if(event.plugin == plugin)
-                                synchronized(this@HeartbeatCoroutine) {
-                                    session = null
-                                    activity.cancel()
-                                }
+                                    synchronized(this@HeartbeatCoroutine) {
+                                        session = null
+                                        activity.cancel()
+                                    }
                             }
                         }, plugin)
                     }
