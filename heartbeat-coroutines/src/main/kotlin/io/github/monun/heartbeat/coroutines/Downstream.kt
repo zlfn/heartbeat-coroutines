@@ -11,7 +11,6 @@ import org.bukkit.plugin.java.JavaPlugin
 internal object Downstream {
     fun pullPlugin(): Plugin {
         return try {
-            Bukkit.getLogger().info(JavaPlugin.getProvidingPlugin(Downstream::class.java).name)
             JavaPlugin.getProvidingPlugin(Downstream::class.java)
         } catch(e: Exception) {
             error("Failed to load plugin")
