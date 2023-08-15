@@ -29,6 +29,7 @@ private object HeartbeatCoroutine {
                         server.pluginManager.registerEvents(object : Listener {
                             @EventHandler(priority = EventPriority.LOWEST)
                             fun onPluginDisable(event: PluginDisableEvent) {
+                                if(event.plugin == plugin)
                                 synchronized(this@HeartbeatCoroutine) {
                                     session = null
                                     activity.cancel()
