@@ -19,8 +19,10 @@
     * JavaPlugin 생명주기의 CoroutineScope
     * 유연한 지연작업
 * #### Supported minecraft versions
-  * 1.18 이상의 **Paper** 및 포크들
-  * Spigot, CraftBukkit은 지원하지 않습니다.
+  * **1.18 이상**의 CraftBukkit 포크
+    * CraftBukkit
+    * Spigot
+    * Paper
 
 ---
 
